@@ -3,7 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const res = require("express/lib/response");
+//const res = require("express/lib/response");
 const _ = require("lodash");
 
 const app = express();
@@ -41,7 +41,7 @@ app.get("/", function (req, res) {
     if (foundItems.length === 0) {
       Item.insertMany(defaultItems, function (err) {
         if (err) console.log(err);
-        else console.log("Successfully inseted default items to model");
+        else console.log("Successfully inserted default items to model");
       });
       res.redirect("/");
     } else {
